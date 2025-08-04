@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stateful-poc
+  namespace: stateful-poc
+spec:
+  rules:
+  - host: bamoe-management-console.engaging-platypus.kat.cmmaz.cloud
+    http:
+      paths:
+      - backend:
+          service:
+            name: my-bamoe-consoles-management-console
+            port:
+              number: 8081
+        path: /
+        pathType: ImplementationSpecific
