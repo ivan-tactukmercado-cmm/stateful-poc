@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_49CA0FB1-9FAA-4672-8A0B-A787EB65E52E" id="_55CBA535-7252-4E37-A674-472EFF00929E" name="DMN_AECB2F1F-A849-44F7-9A49-53EA0E27DB0B">
+  <decision name="InterestRate" id="_790265D1-583D-4396-A6B6-D1A899358B51">
+    <variable name="InterestRate" id="_0BEDC92A-16F4-48A1-A908-E25284DF4B13" typeRef="number" />
+    <informationRequirement id="_19D79B0E-277F-4000-9DC7-738F1DBE180B">
+      <requiredInput href="#_21051927-2035-468A-B2E3-D4D49C782DEB" />
+    </informationRequirement>
+    <informationRequirement id="_C6CEFF0C-6C3D-462F-9AA0-D92A576E3DA6">
+      <requiredInput href="#_81455944-D851-4503-A0A7-3D08E173DF0D" />
+    </informationRequirement>
+    <decisionTable id="_445C1633-3495-4FC2-87F6-8C8CDFA5E16E" typeRef="number" hitPolicy="UNIQUE" label="InterestRate">
+      <input id="_3066A209-5933-455E-95F9-1EF185C69119">
+        <inputExpression id="_7E6E72C2-B7B3-41AF-AF29-A0ACCFFEF46C" typeRef="number">
+          <text>Experian</text>
+        </inputExpression>
+      </input>
+      <input id="_67DE4F63-9DA3-4753-B1F2-C99EC01AD6D0">
+        <inputExpression id="_F447B9B5-7299-44A2-934C-52DADA868C34" typeRef="number">
+          <text>Equfax</text>
+        </inputExpression>
+      </input>
+      <output id="_1796743E-52EE-48B0-A91E-6CE82E91C5C2" />
+      <annotation name="Annotations" />
+      <rule id="_F0AF1466-1B40-4EB1-BC7A-11643F416F39">
+        <inputEntry id="_ACF04E9C-5C6D-4EC3-BFA4-FAF1DE32498C">
+          <text>[600..700)</text>
+        </inputEntry>
+        <inputEntry id="_ECF97819-85F5-49C6-B61F-3CC0024EC6C6">
+          <text>[600..700)</text>
+        </inputEntry>
+        <outputEntry id="_2F40BD53-FD0C-4DC5-9037-28C92396CBC4">
+          <text>10</text>
+        </outputEntry>
+        <annotationEntry>
+          <text>// Your annotations here</text>
+        </annotationEntry>
+      </rule>
+      <rule id="_A6470694-BC95-4A1D-93A9-705436E6782D">
+        <inputEntry id="_9E47D9C2-60A9-4B57-89B9-FF2B24E8EEC6">
+          <text>[700..800)</text>
+        </inputEntry>
+        <inputEntry id="_A6C93900-A207-4BE4-A9A0-7B6DB205AED3">
+          <text>[700..800)</text>
+        </inputEntry>
+        <outputEntry id="_2BDBF04E-2ED1-4B48-8BDC-63DCAC5AD16D">
+          <text>9</text>
+        </outputEntry>
+        <annotationEntry>
+          <text></text>
+        </annotationEntry>
+      </rule>
+      <rule id="_AFF260B9-6336-4E4B-84FE-0374F4BF4C1E">
+        <inputEntry id="_088394CE-9933-4000-874A-3EAB290703F6">
+          <text>[800..850)</text>
+        </inputEntry>
+        <inputEntry id="_F97D2740-7A11-41E9-991A-0FC9B415A858">
+          <text>[800..850)</text>
+        </inputEntry>
+        <outputEntry id="_24F4F098-B35F-4822-AB29-22874ECE2C29">
+          <text>8</text>
+        </outputEntry>
+        <annotationEntry>
+          <text></text>
+        </annotationEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData name="Experian" id="_21051927-2035-468A-B2E3-D4D49C782DEB">
+    <variable name="Experian" id="_83420356-77C6-4F2E-8FE7-F97BD12622FA" typeRef="number" />
+  </inputData>
+  <inputData name="Equfax" id="_81455944-D851-4503-A0A7-3D08E173DF0D">
+    <variable name="Equfax" id="_ACE9E072-CD6D-44FC-A9C3-487DBEE5CD44" typeRef="number" />
+  </inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_B849D300-7A77-4AE2-B542-F83C1177D048" name="Default DRD" useAlternativeInputDataShape="false">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_445C1633-3495-4FC2-87F6-8C8CDFA5E16E">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>240</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="_061004DE-EABF-474D-8D70-2AD33EDD25CE" dmnElementRef="_21051927-2035-468A-B2E3-D4D49C782DEB" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="320" y="80" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_BEC3D5E8-2EF9-4EAB-B3E6-61BD718354CD" dmnElementRef="_81455944-D851-4503-A0A7-3D08E173DF0D" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="320" y="240" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_064A3914-71AC-4D24-B193-91574C0389C6" dmnElementRef="_790265D1-583D-4396-A6B6-D1A899358B51" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="620" y="160" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_93B7CE71-8086-4921-A92E-2196F889D50D" dmnElementRef="_19D79B0E-277F-4000-9DC7-738F1DBE180B" sourceElement="_061004DE-EABF-474D-8D70-2AD33EDD25CE" targetElement="_064A3914-71AC-4D24-B193-91574C0389C6">
+        <di:waypoint x="400" y="120" />
+        <di:waypoint x="620" y="200" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="_DDAF7243-0C34-47C4-97E3-EADE4BBE9BC1" dmnElementRef="_C6CEFF0C-6C3D-462F-9AA0-D92A576E3DA6" sourceElement="_BEC3D5E8-2EF9-4EAB-B3E6-61BD718354CD" targetElement="_064A3914-71AC-4D24-B193-91574C0389C6">
+        <di:waypoint x="400" y="280" />
+        <di:waypoint x="620" y="200" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
