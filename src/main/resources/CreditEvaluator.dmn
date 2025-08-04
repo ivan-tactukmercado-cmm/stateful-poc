@@ -23,10 +23,10 @@
       <annotation name="Annotations" />
       <rule id="_867A9ED9-980A-487D-B78E-DB87674DFFC4">
         <inputEntry id="_21FC800E-F29F-497E-B5D5-6C664EF1B05B">
-          <text>(0..600)</text>
+          <text>[0..600)</text>
         </inputEntry>
         <inputEntry id="_D0BBDDF1-3D36-4495-A305-C53EF713F2AD">
-          <text>(0..600)</text>
+          <text>[0..600)</text>
         </inputEntry>
         <outputEntry id="_28193CE0-63A2-4FAA-B3AC-239CE3F807C0">
           <text>false</text>
@@ -37,10 +37,10 @@
       </rule>
       <rule id="_70435DA5-F9B0-4E79-BBEF-E52022ED9DE8">
         <inputEntry id="_7491D535-FC70-430B-BCA7-D17C3E344B5C">
-          <text>(600..850)</text>
+          <text>[600..850)</text>
         </inputEntry>
         <inputEntry id="_52B79E2A-F09B-4C6E-AD4E-3F06883AD7C6">
-          <text>(600..850)</text>
+          <text>[600..850)</text>
         </inputEntry>
         <outputEntry id="_9760E441-D150-4663-81D6-151E56EE5D66">
           <text>true</text>
