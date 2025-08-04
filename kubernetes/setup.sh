@@ -10,10 +10,12 @@ kubectl create namespace $NAMESPACE
 helm pull oci://quay.io/bamoe/consoles-helm-chart --version=9.2.1-ibm-0005 --untar
 helm install -n $NAMESPACE my-bamoe-consoles ./consoles-helm-chart --values ./consoles-helm-chart/values-kubernetes.yaml --set global.kubernetesClusterDomain="$CLUSTER_DOMAIN"
 
+kubectl apply -f kubernetes/ingress-management-console.yaml 
+echo "It should actually be available at https://bamoe-management-console.$CLUSTER_DOMAIN"
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
-helm install -n $NAMESPACE my-pg bitnami/postgresql --set postgresqlPassword=admin --set postgresqlUsername=admin 
+helm install -n $NAMESPACE my-pg bitnami/postgresql --set postgresqlPassword=admin --set postgresqlUsername=admin --set postgresql.auth.database=bamoe --set postgresql.auth.username=myuser --set postgresql.auth.password=mypassword
 
-kubectl apply -f kubernetes/ingress-management-console.yaml 
-echo "It should actually be available at https://bamoe-management-console.$CLUSTER_DOMAIN"
+USER=$(whoami)
+export USER=${USER//./} 

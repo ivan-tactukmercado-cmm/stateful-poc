@@ -1,6 +1,18 @@
 # BAMOE Kogito Stateful Process Service
 This module contains an example `BAMOE (Kogito) Stateful Process Service`, using the using Kogito and packaged as a micro-service JAR. 
 
+# How to Deploy to kubernetes
+
+1. `kat create`
+2. `source ./kubernetes/setup.sh`
+3. `mvn clean package -Pkubernetes`
+
+Note: You may need to run `az acr login -n katscratch` if already not logged in.
+
+BAMOE Console Management should be available at https://bamoe-management-console.CLUSTERNAME.kat.cmmaz.cloud
+
+Your app should be available at https://stateful-poc.CLUSTERNAME.kat.cmmaz.cloud
+
 # How To Build 
 Once you have configured your local development environment, you need to perform a Maven `build` of the repository.  This repository is built using `mvn clean install` by either the CI/CD pipeline or on a local developer workstation.  If deploying artifacts to an enterprise Maven repository, please use `mvn clean deploy`, which requires configuration of the `distributionManagement` section of your project's parent pom.xml.  This project is also configured to generate container images automatically by utilizing the `docker` or `openshift` profiles, as in the following examples:
 
