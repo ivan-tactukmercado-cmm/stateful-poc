@@ -41,9 +41,9 @@
       	<skipTests>true</skipTests>
 
 		<!-- Shared Fact Model -->
-      	<fact.model.groupId>com.ibm.bamoe.myprojects</fact.model.groupId>
+      	<!-- <fact.model.groupId>com.ibm.bamoe.myprojects</fact.model.groupId>
       	<fact.model.artifactId>my-fact-model</fact.model.artifactId>
-      	<fact.model.version>1.0.0-SNAPSHOT</fact.model.version>
+      	<fact.model.version>1.0.0-SNAPSHOT</fact.model.version> -->
 	</properties>
 
 	<!-- Dependency Management -->
@@ -72,11 +72,11 @@
 	<dependencies>
 
 		<!-- Sharable Fact Model -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>${fact.model.groupId}</groupId>
 			<artifactId>${fact.model.artifactId}</artifactId>
 			<version>${fact.model.version}</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- Quarkus Dependencies -->
 		<dependency>
