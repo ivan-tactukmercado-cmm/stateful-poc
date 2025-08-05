@@ -21,5 +21,8 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
 helm install -n $NAMESPACE my-pg bitnami/postgresql --set postgresqlPassword=admin --set postgresqlUsername=admin --set postgresql.auth.database=bamoe --set postgresql.auth.username=myuser --set postgresql.auth.password=mypassword
 
+# Install Prmetheus Operator so we can deploy with kie-addons-quarkus-monitoring-prometheus
+kubectl create -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/master/bundle.yaml
+
 USER=$(whoami)
 export USER=${USER//./} 

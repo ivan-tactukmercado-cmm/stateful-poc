@@ -215,6 +215,12 @@
 			<artifactId>kogito-scenario-simulation</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- metrics -->
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-addons-quarkus-monitoring-prometheus</artifactId>
+		</dependency>
 	</dependencies>
 
 	<!-- Profiles -->
