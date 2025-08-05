@@ -5,7 +5,7 @@ metadata:
   namespace: stateful-poc
 spec:
   rules:
-  - host: bamoe-management-console.engaging-platypus.kat.cmmaz.cloud
+  - host: bamoe-management-console.MYCLUSTER.kat.cmmaz.cloud
     http:
       paths:
       - backend:
