@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: stateful-poc
+  name: my-own-bamoe-consoles-management-console
   namespace: stateful-poc
 spec:
   rules:
