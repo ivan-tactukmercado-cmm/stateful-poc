@@ -8,14 +8,11 @@ export NAMESPACE=stateful-poc
 kubectl create namespace $NAMESPACE
 
 helm pull oci://quay.io/bamoe/consoles-helm-chart --version=9.2.1-ibm-0005 --untar
-helm install -n $NAMESPACE my-bamoe-consoles ./consoles-helm-chart --values ./consoles-helm-chart/values-kubernetes.yaml --set global.kubernetesClusterDomain="$CLUSTER_DOMAIN"
-
-# We need to patch the ingress management console, because its helm chart does not allow us to set IngressClass=null
-# and we need to use no IngressClass in our KAT clusters.
-sed -i -e "s/MYCLUSTER/$CLUSTER_NAME/g" kubernetes/ingress-management-console.yaml 
-kubectl apply -f kubernetes/ingress-management-console.yaml 
-echo "It should actually be available at https://bamoe-management-console.$CLUSTER_DOMAIN"
-sed -i -e "s/$CLUSTER_NAME/MYCLUSTER/g" kubernetes/ingress-management-console.yaml 
+helm install \
+    -n $NAMESPACE my-bamoe-consoles ./consoles-helm-chart \
+    --values ./kubernetes/values-kubernetes.yaml \
+    --set global.kubernetesClusterDomain="$CLUSTER_DOMAIN" \
+    --set ingress.className=null # To set this property we need to use our modified values-kubernetes.yaml file. We could use a documented property when bug is fixed. We need to set ingressClass to null for it to work in our cluster.
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
