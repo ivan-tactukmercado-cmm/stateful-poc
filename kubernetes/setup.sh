@@ -18,6 +18,9 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
 helm install -n $NAMESPACE my-pg bitnami/postgresql --set postgresqlPassword=admin --set postgresqlUsername=admin --set postgresql.auth.database=bamoe --set postgresql.auth.username=myuser --set postgresql.auth.password=mypassword
 
+helm pull oci://quay.io/bamoe/canvas-helm-chart --version=9.2.1-ibm-0005 --untar
+helm install -n $NAMESPACE  my-bamoe-canvas ./canvas-helm-chart --values ./kubernetes/canvas-values-kubernetes.yaml --set global.kubernetesClusterDomain="$CLUSTER_DOMAIN"
+
 # Install Prmetheus Operator so we can deploy with kie-addons-quarkus-monitoring-prometheus
 kubectl create -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/master/bundle.yaml
 
